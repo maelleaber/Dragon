@@ -2,7 +2,7 @@ import {
   useDispatch,
   useSelector
 } from 'react-redux';
-import styled, {keyframes, css} from 'styled-components'
+import styled from 'styled-components'
 import dragonlogo from './dragon.png'
 
 import {set_dragon, add_dragon, delete_dragon, reverse} from './actions/actions-types'
