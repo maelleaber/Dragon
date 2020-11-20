@@ -45,8 +45,6 @@ const App = () => {
     dispatch(set_dragon({ value, name }))
   }
 
- 
-
   const handleSubmit = event => {
     event.preventDefault()
 
@@ -67,9 +65,7 @@ const App = () => {
           {message && 
             <div className="alert alert-warning">{message}</div>
           }
-          
           <form onSubmit={handleSubmit}>
-          
             <div className='form-group'>
               <label htmlFor="name">Add a dragon</label>
               <input
