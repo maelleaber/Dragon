@@ -1,10 +1,11 @@
-import { SET_DRAGON, ADD, DELETE, REVERSE } from '../constants/actions';
+import { SET_DRAGON, ADD, DELETE, REVERSE, ELEMENT } from '../constants/actions';
 
 const stateInit = {
-    dragons : ['Valk'],
-    count : 1, 
+    dragons : [],
+    count : 0, 
     dragon : '', 
     message : '',
+    element : 'Fire',
 
 }
 
@@ -29,7 +30,7 @@ let reducer = (state = stateInit, action = {}) => {
                 }
             }
 
-            if(state.dragons.filter(dragon => dragon === state.dragon)){
+            if(state.dragons.some(dragon => dragon === state.dragon)){
 
                 return {
                     ...state, 
@@ -61,6 +62,15 @@ let reducer = (state = stateInit, action = {}) => {
                 ...state, 
                 dragons : remaining_dragons,
                 count : state.count - 1,
+            }
+
+        case ELEMENT : 
+
+            const {element, elem} = action.payload
+
+            return {
+                ...state, 
+                [element]: elem
             }
         
         default : 
